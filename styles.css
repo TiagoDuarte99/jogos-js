@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {box-sizing: border-box;}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background 0.2s linear;
+}
+
+body.dark {background-color: #393E46;} 
+
+body.dark h1, body.dark p {color: #4ECCA3;}
+body.dark td{color: white;}
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {color: #f1c40f;}
+
+.fa-sun {color: #f39c12;}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+/* -----------------   Cabeçalho   -------------------- */
+
+.pai {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #393E46;
+    z-index: 1;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.cabEsquerda{
+    display: flex;
+    align-items: center;
+}
+
+.btnCabe{
+    margin: 0px;
+    border: 0px;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.corpo{
+    margin-top: 50px;
+    display: flex;
+}
+
+/* -----------------   jogo do Galo   -------------------- */
+
+.linhaHorizontal {
+    border-bottom: 5px solid red;
+    width: 160px;
+    height: 160px;
+}
+
+.linhaVertical {
+    border-right: 5px solid red;
+    width: 160px;
+    height: 160px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+td {
+    text-align: center;
+    font-size: 70px;
+}
+
+.reset {
+    margin: 0px;
+    border: 0px;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 0px;
+}
+h2{
+    margin: 0px;
+    color: #4ECCA3;
+    font-family: serif;
+}
+p {
+    margin: 0px;
+    font-size: 2rem;
+}
+
+
+
+/* -----------------   jogo dos Dados   -------------------- */
+
+.container {
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+}
+
+.dice {
+    text-align: center;
+    display: inline-block;
+
+}
+
+img {
+    width: 80%;
+}
+
+/* -----------------   jogo da Memoria   -------------------- */
+
+#memoria {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconBirds {
+    width: 130px;
+    height: 180px;
+}
+
+.linha {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.verso {
+    display: none;
+}
+
+
+@keyframes virarCarta {
+    from {
+        transform: rotateY(180deg);
+    }
+    to {
+        transform: rotateY(0deg);
+    }
+}
+
+.carta .frente {
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    animation: virarCarta 0.5s ease forwards;
+}
+
+.carta .verso {
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  animation: virarCarta 0.5s ease forwards; 
+}

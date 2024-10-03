@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'>
+    <title>Jogos</title>
+</head>
+
+<body>
+                <!----------------     Cabeçalho    --------------------->
+    <div class="pai">
+        <div class="cabecalho">
+            <h2> 🎲 Jogos</h2>
+            <div class="cabEsquerda">
+                <button class="btnCabe" onclick="mostarGalo()">Jogo do Galo</button>
+                <button class="btnCabe" onclick="mostarDados()">Jogo dos Dados</button>
+                <button class="btnCabe" onclick="mostarMemoria(), baralharCartas()">Jogo da Memoria</button>
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="checkbox-label">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <span class="ball"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="corpo">
+        <div class="jogos">
+            <!----------------    Jogo do Galo    --------------------->
+            <div id="galo" style="display: block;">
+                <h1 id="vencedor">Jogo do Galo</h1>
+                <p id="jogadorJogar">Jogador a jogar: X</p>
+                <table>
+                    <tr>
+                        <td onclick="jogar(1)" id="1" class="linhaHorizontal linhaVertical"></td>
+                        <td onclick="jogar(2)" id="2" class="linhaHorizontal  linhaVertical"></td>
+                        <td onclick="jogar(3)" id="3" class="linhaHorizontal"></td>
+                    </tr>
+                    <tr>
+                        <td onclick="jogar(4)" id="4" class="linhaHorizontal linhaVertical"></td>
+                        <td onclick="jogar(5)" id="5" class="linhaHorizontal  linhaVertical"></td>
+                        <td onclick="jogar(6)" id="6" class="linhaHorizontal"></td>
+                    </tr>
+                    <tr>
+                        <td onclick="jogar(7)" id="7" class="linhaVertical"></td>
+                        <td onclick="jogar(8)" id="8" class=" linhaVertical"></td>
+                        <td onclick="jogar(9)" id="9"></td>
+                    </tr>
+                </table>
+
+                <button class="reset" onclick="reset()">Reset Jogo do Galo</button>
+            </div>
+
+
+            <!----------------    Jogo dos Dados    --------------------->
+            <div id="dados" style="display: none;">
+                <div class="container">
+                    <h1 id="vencerDados">Jogo dos Dados</h1>
+                    <button class="reset" onclick="vitoria()">Jogar</button>
+                    <br>
+                    <div class="dice">
+                        <p>Player 1</p>
+                        <img class="img1" src="">
+                    </div>
+
+                    <div class="dice">
+                        <p>Player 2</p>
+                        <img class="img2" src="">
+                    </div>
+                    <br>
+                    <button class="reset" onclick="resetDados()">Reset Jogo dos Dados</button>
+                </div>
+            </div>
+
+
+            <!----------------    Jogo da Memoria   --------------------->
+            <div id="memoria" style="display: none;">
+                <div>
+                    <h1 id="vencerMemoria">Jogo da Memoria</h1>
+                    <div class="linha">
+                        <div class="carta" id="10" onclick="virarCarta(10)">
+                            <img class="iconBirds frente" src="./images/card-game-48983_1280.webp" alt="">
+                            <img class="iconBirds verso" id="casa1" alt="">
+                        </div>
+                        <div class="carta" id="11" onclick="virarCarta(11)">
+                            <img class="iconBirds frente" src="./images/card-game-48983_1280.webp" alt="">
+                            <img class="iconBirds verso" id="casa2" alt="">
+                        </div>
+                        <div class="carta" id="12" onclick="virarCarta(12)">
+                            <img class="iconBirds frente" src="./images/card-game-48983_1280.webp" alt="">
+                            <img class="iconBirds verso" id="casa3" alt="">
+                        </div>
+                        <div class="carta" id="13" onclick="virarCarta(13)">
+                            <img class="iconBirds frente" src="./images/card-game-48983_1280.webp" alt="">
+                            <img class="iconBirds verso" id="casa4" alt="">
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="carta" id="14" onclick="virarCarta(14)">
+                            <img class="iconBirds frente" src="./images/card-game-48983_1280.webp" alt="">
+                            <img class="iconBirds verso" id="casa5" alt="">
+                        </div>
+                        <div class="carta" id="15" onclick="virarCarta(15)">
+                            <img class="iconBirds frente" src="./images/card-game-48983_1280.webp" alt="">
+                            <img class="iconBirds verso" id="casa6" alt="">
+                        </div>
+                        <div class="carta" id="16" onclick="virarCarta(16)">
+                            <img class="iconBirds frente" src="./images/card-game-48983_1280.webp" alt="">
+                            <img class="iconBirds verso" id="casa7" alt="">
+                        </div>
+                        <div class="carta" id="17" onclick="virarCarta(17)">
+                            <img class="iconBirds frente" src="./images/card-game-48983_1280.webp" alt="">
+                            <img class="iconBirds verso" id="casa8" alt="">
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="carta" id="18" onclick="virarCarta(18)">
+                            <img class="iconBirds frente" src="./images/card-game-48983_1280.webp" alt="">
+                            <img class="iconBirds verso" id="casa9" alt="">
+                        </div>
+                        <div class="carta" id="19" onclick="virarCarta(19)">
+                            <img class="iconBirds frente" src="./images/card-game-48983_1280.webp" alt="">
+                            <img class="iconBirds verso" id="casa10" alt="">
+                        </div>
+                        <div class="carta" id="20" onclick="virarCarta(20)">
+                            <img class="iconBirds frente" src="./images/card-game-48983_1280.webp" alt="">
+                            <img class="iconBirds verso" id="casa11" alt="">
+                        </div>
+                        <div class="carta" id="21" onclick="virarCarta(21)">
+                            <img class="iconBirds frente" src="./images/card-game-48983_1280.webp" alt="">
+                            <img class="iconBirds verso" id="casa12" alt="">
+                        </div>
+                    </div>
+                    <button class="reset" onclick="baralharCartas()">Baralhar Cartas</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
